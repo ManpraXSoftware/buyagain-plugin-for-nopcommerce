@@ -81,8 +81,6 @@ namespace Nop.Plugin.Widgets.BuyAgain
 
         public override async Task UninstallAsync()
         {
-
-            _widgetSettings.ActiveWidgetSystemNames.Remove(BuyAgainDefaults.SystemName);
             //settings
             await _settingService.DeleteSettingAsync<BuyAgainSettings>();
 
