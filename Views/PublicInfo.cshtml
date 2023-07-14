@@ -1,0 +1,38 @@
+﻿@model OrderDetailsModel.OrderItemModel
+
+<link rel="stylesheet" href="~/Plugins/Widgets.BuyAgain/Content/styles.css" />
+
+<div class="product-item" data-productid="@Model.ProductId">
+    <div class="picture">
+        @if (Model != null)
+        {
+            <div class="swiper" id="swiper-@Model.Id" dir="@Html.GetUIDirection(!await Html.ShouldUseRtlThemeAsync())">
+                <div class="swiper-wrapper">                    
+                    
+                    <a class="swiper-slide" href="@(Url.RouteUrl<Product>(new { SeName = Model.ProductSeName }))" title="@Model.Picture.Title">
+                        <img alt="@Model.Picture.AlternateText" src="@Model.Picture.ImageUrl" title="@Model.Picture.Title" />
+                        </a>
+
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <script asp-location="Footer">
+                new Swiper('#swiper-@(Model.Id)', {
+                    pagination: {
+                        clickable: true,
+                        el: '.swiper-pagination',
+                    },
+                });
+            </script>
+        }
+        else
+        {
+            var picture = Model.Picture;
+            <a href="@(Url.RouteUrl<Product>(new { SeName = Model.ProductSeName }))" title="@picture?.Title">
+                <img alt="@picture?.AlternateText" src="@picture?.ImageUrl" title="@picture?.Title" />
+            </a>
+        }
+    </div> 
+</div>

@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "Buy Again",
+  "SystemName": "Widgets.BuyAgain",
+  "Version": "1.00",
+  "SupportedVersions": [ "4.60" ],
+  "Author": "manpraX Software LLP",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.BuyAgain.dll",
+  "Description": "This plugin helps to show purchased Product in HomePage as a grid"
+}
